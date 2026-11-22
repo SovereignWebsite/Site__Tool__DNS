@@ -20,6 +20,7 @@
 <meta name="twitter:title" content="DNS">
 <meta name="twitter:description" content="Check a name's DNS records from resolvers and regions around the world, in your browser, without ads or tracking.">
 <meta name="twitter:image" content="https://dns.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="stylesheet" href="/assets/dns.css">
 <link rel="canonical" href="https://dns.tool.sovereignweb.site/">
 <style>
 :root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#5d5c57;--accent:#2f6b4f;--line:#e4e1d8}
@@ -90,9 +91,26 @@ code{font-size:.9em}main a,main code{overflow-wrap:anywhere}
 </header>
 <main id="main">
 <div class="mark">dns.tool.sovereignweb.site</div>
-<h1>DNS</h1>
-<p>Check a name's DNS records from resolvers and regions around the world, in your browser, without ads or tracking.</p>
-<p>This site was made by one request to the Sovereign Website pipeline. Its files, its history and its address are in a repository its owner controls, and can move anywhere.</p>
+<h1>DNS, around the world</h1>
+<p>Type a name and a record type. Your browser asks three public resolvers, then asks Google Public DNS as if from 26 countries. Nothing goes through this site: no server, no cookies, no ads, no tracking.</p>
+<form id="check" class="check">
+  <label for="name">Domain name</label>
+  <input id="name" name="name" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sovereignweb.site" required>
+  <label for="type">Record type</label>
+  <select id="type" name="type">
+    <option>A</option><option>AAAA</option><option>CNAME</option><option>MX</option><option>NS</option><option>TXT</option><option>SOA</option><option>CAA</option>
+  </select>
+  <button type="submit">Check</button>
+</form>
+<p id="summary" class="summary" role="status" aria-live="polite"></p>
+<div id="results"></div>
+<h2>How it works</h2>
+<ul class="plain">
+<li>The three resolvers (<a href="https://developers.google.com/speed/public-dns/docs/doh/json">Google Public DNS</a>, <a href="https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/dns-json/">Cloudflare</a> and AliDNS) answer DNS over HTTPS and allow calls from a web page. Each answers from its server nearest to you.</li>
+<li>For the countries, the page sends Google Public DNS a client subnet: a /24 inside an address block that the country’s registry allocated to it, as listed by <a href="https://stat.ripe.net/">RIPEstat</a> (<a href="/data/regions.json">the list</a>). A name served by a CDN answers as it would for a visitor in that country. A name that does not answer by location gives the same answer everywhere.</li>
+<li>So this shows what each resolver holds and what each country is told. It is not yet a lookup from each country’s own resolvers: that needs checkers placed in those countries, a later step.</li>
+<li>Who owns a name: <a href="https://whois.tool.sovereignweb.site/">whois.tool.sovereignweb.site</a>.</li>
+</ul>
 <footer>
 <nav class="site-links" aria-label="About this site">
   <a href="/start/">Start here</a>
@@ -102,5 +120,6 @@ code{font-size:.9em}main a,main code{overflow-wrap:anywhere}
 </nav>
 A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/Site__Tool__DNS">github.com/SovereignWebsite/Site__Tool__DNS</a>.</footer>
 </main>
+<script src="/assets/dns.js" defer></script>
 </body>
 </html>

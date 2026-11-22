@@ -1,0 +1,188 @@
+{
+  "source": "https://stat.ripe.net/docs/data-api/api-endpoints/country-resource-list",
+  "built": "2026-11-22",
+  "regions": [
+    {
+      "cc": "US",
+      "name": "United States",
+      "area": "North America",
+      "prefix": "192.79.0.0/16",
+      "subnet": "192.79.0.0/24"
+    },
+    {
+      "cc": "CA",
+      "name": "Canada",
+      "area": "North America",
+      "prefix": "198.96.32.0/21",
+      "subnet": "198.96.32.0/24"
+    },
+    {
+      "cc": "MX",
+      "name": "Mexico",
+      "area": "North America",
+      "prefix": "200.23.107.0/24",
+      "subnet": "200.23.107.0/24"
+    },
+    {
+      "cc": "BR",
+      "name": "Brazil",
+      "area": "South America",
+      "prefix": "177.52.220.0/24",
+      "subnet": "177.52.220.0/24"
+    },
+    {
+      "cc": "AR",
+      "name": "Argentina",
+      "area": "South America",
+      "prefix": "181.164.0.0/14",
+      "subnet": "181.164.0.0/24"
+    },
+    {
+      "cc": "CL",
+      "name": "Chile",
+      "area": "South America",
+      "prefix": "190.208.0.0/16",
+      "subnet": "190.208.0.0/24"
+    },
+    {
+      "cc": "GB",
+      "name": "United Kingdom",
+      "area": "Europe",
+      "prefix": "185.33.208.0/22",
+      "subnet": "185.33.208.0/24"
+    },
+    {
+      "cc": "PT",
+      "name": "Portugal",
+      "area": "Europe",
+      "prefix": "188.125.192.0/19",
+      "subnet": "188.125.192.0/24"
+    },
+    {
+      "cc": "ES",
+      "name": "Spain",
+      "area": "Europe",
+      "prefix": "185.73.168.0/22",
+      "subnet": "185.73.168.0/24"
+    },
+    {
+      "cc": "FR",
+      "name": "France",
+      "area": "Europe",
+      "prefix": "185.110.84.0/22",
+      "subnet": "185.110.84.0/24"
+    },
+    {
+      "cc": "DE",
+      "name": "Germany",
+      "area": "Europe",
+      "prefix": "185.147.4.0/22",
+      "subnet": "185.147.4.0/24"
+    },
+    {
+      "cc": "NL",
+      "name": "Netherlands",
+      "area": "Europe",
+      "prefix": "185.29.44.0/22",
+      "subnet": "185.29.44.0/24"
+    },
+    {
+      "cc": "SE",
+      "name": "Sweden",
+      "area": "Europe",
+      "prefix": "185.35.84.0/22",
+      "subnet": "185.35.84.0/24"
+    },
+    {
+      "cc": "PL",
+      "name": "Poland",
+      "area": "Europe",
+      "prefix": "185.11.128.0/22",
+      "subnet": "185.11.128.0/24"
+    },
+    {
+      "cc": "ZA",
+      "name": "South Africa",
+      "area": "Africa",
+      "prefix": "165.25.0.0/16",
+      "subnet": "165.25.0.0/24"
+    },
+    {
+      "cc": "NG",
+      "name": "Nigeria",
+      "area": "Africa",
+      "prefix": "102.212.252.0/22",
+      "subnet": "102.212.252.0/24"
+    },
+    {
+      "cc": "KE",
+      "name": "Kenya",
+      "area": "Africa",
+      "prefix": "102.210.148.0/22",
+      "subnet": "102.210.148.0/24"
+    },
+    {
+      "cc": "EG",
+      "name": "Egypt",
+      "area": "Africa",
+      "prefix": "102.221.68.0/22",
+      "subnet": "102.221.68.0/24"
+    },
+    {
+      "cc": "AE",
+      "name": "United Arab Emirates",
+      "area": "Asia",
+      "prefix": "109.196.98.0/23",
+      "subnet": "109.196.98.0/24"
+    },
+    {
+      "cc": "IN",
+      "name": "India",
+      "area": "Asia",
+      "prefix": "103.170.132.0/23",
+      "subnet": "103.170.132.0/24"
+    },
+    {
+      "cc": "SG",
+      "name": "Singapore",
+      "area": "Asia",
+      "prefix": "124.108.112.0/20",
+      "subnet": "124.108.112.0/24"
+    },
+    {
+      "cc": "JP",
+      "name": "Japan",
+      "area": "Asia",
+      "prefix": "150.249.0.0/16",
+      "subnet": "150.249.0.0/24"
+    },
+    {
+      "cc": "KR",
+      "name": "South Korea",
+      "area": "Asia",
+      "prefix": "166.104.0.0/16",
+      "subnet": "166.104.0.0/24"
+    },
+    {
+      "cc": "HK",
+      "name": "Hong Kong",
+      "area": "Asia",
+      "prefix": "103.237.72.0/22",
+      "subnet": "103.237.72.0/24"
+    },
+    {
+      "cc": "AU",
+      "name": "Australia",
+      "area": "Oceania",
+      "prefix": "125.254.60.0/22",
+      "subnet": "125.254.60.0/24"
+    },
+    {
+      "cc": "NZ",
+      "name": "New Zealand",
+      "area": "Oceania",
+      "prefix": "160.202.164.0/22",
+      "subnet": "160.202.164.0/24"
+    }
+  ]
+}
