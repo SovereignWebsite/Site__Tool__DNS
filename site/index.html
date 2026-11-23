@@ -2,6 +2,7 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://dns.google https://cloudflare-dns.com https://dns.alidns.com; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'none'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DNS</title>
 <meta name="description" content="Check a name's DNS records from resolvers and regions around the world, in your browser, without ads or tracking.">
@@ -87,12 +88,14 @@ code{font-size:.9em}main a,main code{overflow-wrap:anywhere}
   <nav class="own" aria-label="This site">
     <a href="/start/">Start here</a>
     <a href="/agents/">Use with your AI</a>
+    <a href="/designs/">Choose a design</a>
   </nav>
 </header>
 <main id="main">
 <div class="mark">dns.tool.sovereignweb.site</div>
 <h1>DNS, around the world</h1>
-<p>Type a name and a record type. Your browser asks three public resolvers, then asks Google Public DNS as if from 26 countries. Nothing goes through this site: no server, no cookies, no ads, no tracking.</p>
+<p class="lead">Type a name and a record type. Your browser asks three public resolvers, then asks Google Public DNS as if from 26 countries. Nothing goes through this site: no server, no cookies, no ads, no tracking.</p>
+<p class="lead">Pressing Check sends only the name and record type, from your browser, to dns.google, cloudflare-dns.com and dns.alidns.com. Nothing is sent when the page opens.</p>
 <form id="check" class="check">
   <label for="name">Domain name</label>
   <input id="name" name="name" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sovereignweb.site" required>

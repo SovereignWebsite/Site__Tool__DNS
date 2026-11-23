@@ -20,3 +20,11 @@ td.ok{color:var(--accent);font-weight:600;white-space:nowrap}
 td.bad{color:#a13a2a;font-weight:600}
 @media (prefers-color-scheme:dark){td.bad{color:#ff9b8a}}
 td.num{text-align:right;font-variant-numeric:tabular-nums}
+/* design.c round 1: control borders at 3:1, body text in --fg, nothing under 14 px */
+:root{--control:#85847f}
+@media (prefers-color-scheme:dark){:root{--control:#76756f}}
+.check input,.check select{border-color:var(--control)}
+main p.lead,main ul.plain,main ul.plain li{color:var(--fg)}
+footer{font-size:.9rem}
+th .sub,thead th,tr.group th{font-size:.875rem}
+.check label,.mark{font-size:.875rem}
