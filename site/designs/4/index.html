@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://dns.google https://cloudflare-dns.com https://dns.alidns.com; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'none'; form-action 'self'">
+<title>Atlas, design 4 of DNS</title>
+<meta name="description" content="Design 4 of dns.tool.sovereignweb.site, Atlas: An atlas: the countries by continent, and the check as the legend that colours them in.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DNS">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://dns.tool.sovereignweb.site/designs/4/">
+<meta property="og:title" content="Atlas, design 4 of DNS">
+<meta property="og:description" content="Design 4 of dns.tool.sovereignweb.site, Atlas: An atlas: the countries by continent, and the check as the legend that colours them in.">
+<meta property="og:image" content="https://dns.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DNS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas, design 4 of DNS">
+<meta name="twitter:description" content="Design 4 of dns.tool.sovereignweb.site, Atlas: An atlas: the countries by continent, and the check as the legend that colours them in.">
+<meta name="twitter:image" content="https://dns.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://dns.tool.sovereignweb.site/designs/4/">
+<style>
+*{box-sizing:border-box}
+html{color-scheme:light dark;-webkit-text-size-adjust:100%}
+body{margin:0;font:1.0625rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);overflow-wrap:break-word}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:.5rem;z-index:99;background:var(--bg);color:var(--fg);padding:.5rem .9rem;border:2px solid var(--focus)}
+.skip:focus{left:1rem}
+main *{min-width:0}
+.chrome{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:flex-end;position:relative;z-index:5;padding-top:.5rem}
+.chrome details{position:relative}
+.chrome summary{cursor:pointer;list-style:none;min-height:44px;display:inline-flex;align-items:center;padding:.35rem .8rem;border:1px solid var(--ctl);border-radius:999px;font-size:.9rem;background:var(--bg);color:var(--fg)}
+.chrome summary::-webkit-details-marker{display:none}
+.chrome summary::after{content:"";width:.45rem;height:.45rem;margin-left:.5rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.chrome details[open] summary::after{transform:rotate(-135deg)}
+.chrome ul{position:absolute;right:0;top:calc(100% + .35rem);margin:0;padding:.4rem;list-style:none;min-width:15rem;max-width:calc(100vw - 2rem);background:var(--bg);color:var(--fg);border:1px solid var(--ctl);border-radius:.6rem;box-shadow:0 .6rem 1.6rem rgba(0,0,0,.25)}
+.chrome li a{display:block;padding:.55rem .7rem;border-radius:.4rem;color:var(--fg);text-decoration:none;font-size:.95rem}
+.chrome li a:hover,.chrome li a:focus-visible{background:var(--hover)}
+.chrome li a[aria-current]{font-weight:700;text-decoration:underline}
+.chrome .gap{border-top:1px solid var(--ctl);margin-top:.3rem;padding-top:.3rem}
+.chrome small{display:block;font-size:.85rem;color:var(--muted);font-weight:400}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.check{display:grid;grid-template-columns:1fr auto auto;gap:.4rem .6rem;align-items:end;margin:1.25rem 0 .5rem}
+.check label{font-size:.9rem;color:var(--muted);grid-row:1}
+.check label[for=type]{grid-column:2}
+.check input,.check select,.check button{font:inherit;font-size:1rem;padding:.55rem .7rem;border:1px solid var(--ctl);border-radius:6px;background:var(--field);color:var(--fg);min-height:44px}
+.check input{grid-column:1;grid-row:2}.check select{grid-column:2;grid-row:2}
+.check button{grid-column:3;grid-row:2;background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:700;cursor:pointer}
+@media (max-width:30rem){.check{grid-template-columns:1fr auto}.check button{grid-column:1/-1;grid-row:3}}
+.summary{font-weight:700;min-height:1.6em}
+.scroll{overflow-x:auto;margin:1rem 0}
+#results table{border-collapse:collapse;width:100%;font-size:.95rem}
+#results caption{text-align:left;font-weight:700;padding:.4rem 0}
+#results th,#results td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--line)}
+#results thead th{color:var(--muted);font-size:.9rem}
+#results th .sub{display:block;font-weight:400;color:var(--muted);font-size:.875rem}
+#results tr.group th{background:var(--hover);font-size:.875rem;letter-spacing:.06em;text-transform:uppercase}
+#results td.vals{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}
+#results td.ok{color:var(--ok);font-weight:700;white-space:nowrap}
+#results td.bad{color:var(--bad);font-weight:700}
+#results td.num{text-align:right;font-variant-numeric:tabular-nums}
+.sent{font-size:.9rem;color:var(--muted)}
+footer{padding:2rem 0 3rem;font-size:.95rem}
+footer nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+footer nav a{min-height:44px;display:inline-flex;align-items:center}
+@media print{.chrome,.skip,.check{display:none}}
+
+:root{--bg:#f4efe3;--fg:#211d16;--muted:#5a5144;--link:#0e5a6b;--focus:#0e5a6b;--ctl:#857a67;--hover:#e9e1cf;--field:#fffdf8;--accent:#0e5a6b;--on-accent:#ffffff;--line:#d6cbb3;--ok:#1d6b45;--bad:#a13a2a;--sea:#d8e6e3;--land:#fffdf8}
+@media (prefers-color-scheme:dark){:root{--bg:#15130f;--fg:#efe8da;--muted:#c2b8a4;--link:#8fd1df;--focus:#8fd1df;--ctl:#8e8471;--hover:#24201a;--field:#1d1a15;--accent:#8fd1df;--on-accent:#0b1416;--line:#3b352b;--ok:#86ddb3;--bad:#ff9b8a;--sea:#14262a;--land:#1d1a15}}
+.wrap{max-width:74rem;margin:0 auto;padding:0 1rem}
+.mast{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem 1rem;padding:.5rem 0;border-bottom:2px solid var(--fg)}
+.brand{font:italic 700 1.3rem Georgia,"Iowan Old Style","Times New Roman",serif;color:var(--fg);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.own{display:flex;flex-wrap:wrap;gap:.25rem 1rem;font-size:.95rem}.own a{color:var(--fg);min-height:44px;display:inline-flex;align-items:center}
+.plate{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));padding:clamp(1.5rem,4vw,3rem) 0}
+.k{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+h1,h2{font-family:Georgia,"Iowan Old Style","Times New Roman",serif}
+h1{font-size:clamp(2.2rem,6.4vw,4rem);line-height:1.02;margin:.4rem 0 1rem}
+.legend{background:var(--land);border:2px solid var(--fg);padding:1rem 1.2rem;box-shadow:.5rem .5rem 0 var(--sea)}
+.legend h2{font-size:1.2rem;margin:0}
+.map{background:var(--sea);border-radius:1rem;padding:clamp(1rem,3vw,2rem);margin:0 0 2rem}
+.map>h2{font-size:clamp(1.45rem,3.4vw,2rem);margin:0 0 1rem}
+.countries{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
+.area{background:var(--land);border:1px solid var(--line);border-radius:40% 12% 30% 18%/18% 30% 12% 40%;padding:1rem 1.2rem}
+.area h3{font:italic 700 1.1rem Georgia,serif;margin:0 0 .4rem}
+.area ul{list-style:none;margin:0;padding:0}
+.area li{padding:.15rem 0}
+.cc{display:inline-block;min-width:2rem;font:700 .875rem ui-monospace,Menlo,Consolas,monospace;color:var(--accent)}
+h2.plain{font-size:clamp(1.45rem,3.4vw,2rem);margin:1rem 0 .5rem}
+.how{max-width:48rem;padding-left:1.2rem}.how li{margin:.5rem 0}
+footer{border-top:2px solid var(--fg)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap"><nav class="chrome" aria-label="Designs and the Sovereign Website family">
+<details><summary>Choose a design</summary><ul><li><a href="/designs/1/">1. Zone File<small>The page written as a DNS zone file: comments for the words, the form as one record line.</small></a></li><li><a href="/designs/2/">2. Departures<small>A departures board of the 26 countries and three resolvers, dark first, the answer as the arrival.</small></a></li><li><a href="/designs/3/">3. The Path<small>The journey of one question, drawn step by step from your browser to the resolvers and back.</small></a></li><li><a href="/designs/4/" aria-current="page">4. Atlas<small>An atlas: the countries by continent, and the check as the legend that colours them in.</small></a></li><li><a href="/designs/5/">5. Brief<small>Everything on one plain page, for reading fast or printing.</small></a></li><li class="gap"><a href="/designs/">All five, side by side</a></li><li><a href="/">The site as it is now</a></li></ul></details>
+<details><summary>Sovereign Website</summary><ul><li><a href="/start/">Start here</a></li><li><a href="/agents/">Use with your AI</a></li><li><a href="/admin/">How this site was made</a></li><li class="gap"><a href="/policy/">How this site is governed</a></li><li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li><li><a href="https://sovereignwebsite.org/">Principles</a></li><li><a href="https://sovereignwebsite.site/">Hosted</a></li><li><a href="https://hub.sovereignweb.site/">Hub</a></li><li><a href="https://agents.sovereignweb.site/">Agents</a></li><li><a href="https://vault.sovereignwebsite.site/">Vault</a></li><li><a href="https://agenticcells.ai/">AgentiCCells</a></li><li><a href="https://riskmandate.ai/">RiskMandate</a></li><li><a href="https://newsroom.sgit.ai/">Newsroom</a></li></ul></details>
+</nav>
+<header class="mast"><a class="brand" href="/">DNS</a><nav class="own" aria-label="This site"><a href="#check">Check a name</a><a href="#how">How it works</a><a href="/start/">Start here</a><a href="/agents/">Use with your AI</a></nav></header>
+<main id="main">
+<div class="plate"><div><p class="k">dns.tool.sovereignweb.site</p><h1>DNS, around the world</h1><p>Type a name and a record type. Your browser asks three public resolvers, then asks Google Public DNS as if from 26 countries. Nothing goes through this site: no server, no cookies, no ads, no tracking.</p></div>
+<div class="legend"><h2>Check a name</h2><form id="check" class="check">
+<label for="name">Domain name</label>
+<input id="name" name="name" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sovereignweb.site" required>
+<label for="type">Record type</label>
+<select id="type" name="type"><option>A</option><option>AAAA</option><option>CNAME</option><option>MX</option><option>NS</option><option>TXT</option><option>SOA</option><option>CAA</option></select>
+<button type="submit">Check</button>
+</form>
+<p class="sent">When you press Check, your browser sends the name to dns.google, cloudflare-dns.com and dns.alidns.com, and nothing else; this page names only those hosts in its security policy.</p>
+<p id="summary" class="summary" role="status" aria-live="polite"></p>
+<div id="results"></div></div></div>
+<section class="map" aria-labelledby="h-map"><h2 id="h-map">The 26 countries, by continent</h2><div class="countries"><div class="area"><h3>North America</h3><ul><li><span class="cc">US</span> United States</li><li><span class="cc">CA</span> Canada</li><li><span class="cc">MX</span> Mexico</li></ul></div><div class="area"><h3>South America</h3><ul><li><span class="cc">BR</span> Brazil</li><li><span class="cc">AR</span> Argentina</li><li><span class="cc">CL</span> Chile</li></ul></div><div class="area"><h3>Europe</h3><ul><li><span class="cc">GB</span> United Kingdom</li><li><span class="cc">PT</span> Portugal</li><li><span class="cc">ES</span> Spain</li><li><span class="cc">FR</span> France</li><li><span class="cc">DE</span> Germany</li><li><span class="cc">NL</span> Netherlands</li><li><span class="cc">SE</span> Sweden</li><li><span class="cc">PL</span> Poland</li></ul></div><div class="area"><h3>Africa</h3><ul><li><span class="cc">ZA</span> South Africa</li><li><span class="cc">NG</span> Nigeria</li><li><span class="cc">KE</span> Kenya</li><li><span class="cc">EG</span> Egypt</li></ul></div><div class="area"><h3>Asia</h3><ul><li><span class="cc">AE</span> United Arab Emirates</li><li><span class="cc">IN</span> India</li><li><span class="cc">SG</span> Singapore</li><li><span class="cc">JP</span> Japan</li><li><span class="cc">KR</span> South Korea</li><li><span class="cc">HK</span> Hong Kong</li></ul></div><div class="area"><h3>Oceania</h3><ul><li><span class="cc">AU</span> Australia</li><li><span class="cc">NZ</span> New Zealand</li></ul></div></div></section>
+<h2 class="plain" id="how">How it works</h2>
+<ul class="how"><li>The three resolvers (<a href="https://developers.google.com/speed/public-dns/docs/doh/json">Google Public DNS</a>, <a href="https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/dns-json/">Cloudflare</a> and AliDNS) answer DNS over HTTPS and allow calls from a web page. Each answers from its server nearest to you.</li><li>For the countries, the page sends Google Public DNS a client subnet: a /24 inside an address block that the country’s registry allocated to it, as listed by <a href="https://stat.ripe.net/">RIPEstat</a> (<a href="/data/regions.json">the list</a>). A name served by a CDN answers as it would for a visitor in that country. A name that does not answer by location gives the same answer everywhere.</li><li>So this shows what each resolver holds and what each country is told. It is not yet a lookup from each country’s own resolvers: that needs checkers placed in those countries, a later step.</li><li>Who owns a name: <a href="https://whois.tool.sovereignweb.site/">whois.tool.sovereignweb.site</a>.</li></ul>
+</main>
+<footer>
+<nav aria-label="About this site"><a href="/start/">Start here</a> <a href="/agents/">Use with your AI</a> <a href="/admin/">How this site was made</a> <a href="/policy/">How this site is governed</a></nav>
+<p>A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/Site__Tool__DNS">github.com/SovereignWebsite/Site__Tool__DNS</a>.</p>
+</footer>
+<script src="/assets/dns.js" defer></script>
+</div></body>
+</html>

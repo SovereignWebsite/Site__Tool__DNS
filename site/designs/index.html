@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://dns.google https://cloudflare-dns.com https://dns.alidns.com; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'none'; form-action 'self'">
+<title>Five designs, DNS</title>
+<meta name="description" content="Five designs of dns.tool.sovereignweb.site, the same checker in five ideas, side by side.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DNS">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://dns.tool.sovereignweb.site/designs/">
+<meta property="og:title" content="Five designs, DNS">
+<meta property="og:description" content="Five designs of dns.tool.sovereignweb.site, the same checker in five ideas, side by side.">
+<meta property="og:image" content="https://dns.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DNS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Five designs, DNS">
+<meta name="twitter:description" content="Five designs of dns.tool.sovereignweb.site, the same checker in five ideas, side by side.">
+<meta name="twitter:image" content="https://dns.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://dns.tool.sovereignweb.site/designs/">
+<style>
+*{box-sizing:border-box}
+html{color-scheme:light dark;-webkit-text-size-adjust:100%}
+body{margin:0;font:1.0625rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);overflow-wrap:break-word}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:.5rem;z-index:99;background:var(--bg);color:var(--fg);padding:.5rem .9rem;border:2px solid var(--focus)}
+.skip:focus{left:1rem}
+main *{min-width:0}
+.chrome{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:flex-end;position:relative;z-index:5;padding-top:.5rem}
+.chrome details{position:relative}
+.chrome summary{cursor:pointer;list-style:none;min-height:44px;display:inline-flex;align-items:center;padding:.35rem .8rem;border:1px solid var(--ctl);border-radius:999px;font-size:.9rem;background:var(--bg);color:var(--fg)}
+.chrome summary::-webkit-details-marker{display:none}
+.chrome summary::after{content:"";width:.45rem;height:.45rem;margin-left:.5rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.chrome details[open] summary::after{transform:rotate(-135deg)}
+.chrome ul{position:absolute;right:0;top:calc(100% + .35rem);margin:0;padding:.4rem;list-style:none;min-width:15rem;max-width:calc(100vw - 2rem);background:var(--bg);color:var(--fg);border:1px solid var(--ctl);border-radius:.6rem;box-shadow:0 .6rem 1.6rem rgba(0,0,0,.25)}
+.chrome li a{display:block;padding:.55rem .7rem;border-radius:.4rem;color:var(--fg);text-decoration:none;font-size:.95rem}
+.chrome li a:hover,.chrome li a:focus-visible{background:var(--hover)}
+.chrome li a[aria-current]{font-weight:700;text-decoration:underline}
+.chrome .gap{border-top:1px solid var(--ctl);margin-top:.3rem;padding-top:.3rem}
+.chrome small{display:block;font-size:.85rem;color:var(--muted);font-weight:400}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.check{display:grid;grid-template-columns:1fr auto auto;gap:.4rem .6rem;align-items:end;margin:1.25rem 0 .5rem}
+.check label{font-size:.9rem;color:var(--muted);grid-row:1}
+.check label[for=type]{grid-column:2}
+.check input,.check select,.check button{font:inherit;font-size:1rem;padding:.55rem .7rem;border:1px solid var(--ctl);border-radius:6px;background:var(--field);color:var(--fg);min-height:44px}
+.check input{grid-column:1;grid-row:2}.check select{grid-column:2;grid-row:2}
+.check button{grid-column:3;grid-row:2;background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:700;cursor:pointer}
+@media (max-width:30rem){.check{grid-template-columns:1fr auto}.check button{grid-column:1/-1;grid-row:3}}
+.summary{font-weight:700;min-height:1.6em}
+.scroll{overflow-x:auto;margin:1rem 0}
+#results table{border-collapse:collapse;width:100%;font-size:.95rem}
+#results caption{text-align:left;font-weight:700;padding:.4rem 0}
+#results th,#results td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--line)}
+#results thead th{color:var(--muted);font-size:.9rem}
+#results th .sub{display:block;font-weight:400;color:var(--muted);font-size:.875rem}
+#results tr.group th{background:var(--hover);font-size:.875rem;letter-spacing:.06em;text-transform:uppercase}
+#results td.vals{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}
+#results td.ok{color:var(--ok);font-weight:700;white-space:nowrap}
+#results td.bad{color:var(--bad);font-weight:700}
+#results td.num{text-align:right;font-variant-numeric:tabular-nums}
+.sent{font-size:.9rem;color:var(--muted)}
+footer{padding:2rem 0 3rem;font-size:.95rem}
+footer nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+footer nav a{min-height:44px;display:inline-flex;align-items:center}
+@media print{.chrome,.skip,.check{display:none}}
+
+:root{--bg:#f6f5f2;--fg:#151515;--muted:#4f4c47;--link:#1f5c45;--focus:#1f5c45;--ctl:#77736c;--hover:#e9e6df;--card:#fff;--line:#dcd8cf;--field:#fff;--accent:#1f5c45;--on-accent:#fff;--ok:#1f5c45;--bad:#a13a2a}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#efede8;--muted:#bdb9b1;--link:#8fd3b0;--focus:#8fd3b0;--ctl:#85817a;--hover:#222;--card:#1c1c1c;--line:#333;--field:#1a1a1a;--accent:#8fd3b0;--on-accent:#0b1410;--ok:#8fd3b0;--bad:#ff9b8a}}
+.wrap{max-width:76rem;margin:0 auto;padding:0 1rem}
+.brand{font-weight:800;color:var(--fg);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+h1{font:700 clamp(2rem,5.5vw,3rem)/1.1 Georgia,serif;margin:1rem 0 .75rem}
+.cards{list-style:none;margin:1.5rem 0 3rem;padding:0;display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))}
+.cards li{background:var(--card);border:1px solid var(--line);border-radius:.6rem;overflow:hidden}
+.cards img{display:block;max-width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;width:100%;border-bottom:1px solid var(--line)}
+.cards .b{padding:1rem}.cards h2{font-size:1.2rem;margin:0 0 .3rem}.cards p{margin:.3rem 0}
+footer{border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap"><nav class="chrome" aria-label="Designs and the Sovereign Website family">
+<details><summary>Choose a design</summary><ul><li><a href="/designs/1/">1. Zone File<small>The page written as a DNS zone file: comments for the words, the form as one record line.</small></a></li><li><a href="/designs/2/">2. Departures<small>A departures board of the 26 countries and three resolvers, dark first, the answer as the arrival.</small></a></li><li><a href="/designs/3/">3. The Path<small>The journey of one question, drawn step by step from your browser to the resolvers and back.</small></a></li><li><a href="/designs/4/">4. Atlas<small>An atlas: the countries by continent, and the check as the legend that colours them in.</small></a></li><li><a href="/designs/5/">5. Brief<small>Everything on one plain page, for reading fast or printing.</small></a></li><li class="gap"><a href="/designs/">All five, side by side</a></li><li><a href="/">The site as it is now</a></li></ul></details>
+<details><summary>Sovereign Website</summary><ul><li><a href="/start/">Start here</a></li><li><a href="/agents/">Use with your AI</a></li><li><a href="/admin/">How this site was made</a></li><li class="gap"><a href="/policy/">How this site is governed</a></li><li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li><li><a href="https://sovereignwebsite.org/">Principles</a></li><li><a href="https://sovereignwebsite.site/">Hosted</a></li><li><a href="https://hub.sovereignweb.site/">Hub</a></li><li><a href="https://agents.sovereignweb.site/">Agents</a></li><li><a href="https://vault.sovereignwebsite.site/">Vault</a></li><li><a href="https://agenticcells.ai/">AgentiCCells</a></li><li><a href="https://riskmandate.ai/">RiskMandate</a></li><li><a href="https://newsroom.sgit.ai/">Newsroom</a></li></ul></details>
+</nav>
+<header><a class="brand" href="/">DNS</a></header>
+<main id="main"><h1>Five designs of this site</h1>
+<p>The same checker and the same words, in five ideas from the world of DNS. Each one works: type a name and press Check. The owner picks one; the keeper makes it the site.</p>
+<ul class="cards"><li><img src="/designs/1/shot-1366.webp" alt="Design 1, Zone File, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/1/">1. Zone File</a></h2><p>The page written as a DNS zone file: comments for the words, the form as one record line.</p></div></li><li><img src="/designs/2/shot-1366.webp" alt="Design 2, Departures, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/2/">2. Departures</a></h2><p>A departures board of the 26 countries and three resolvers, dark first, the answer as the arrival.</p></div></li><li><img src="/designs/3/shot-1366.webp" alt="Design 3, The Path, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/3/">3. The Path</a></h2><p>The journey of one question, drawn step by step from your browser to the resolvers and back.</p><p><strong>Recommended by the designer.</strong></p></div></li><li><img src="/designs/4/shot-1366.webp" alt="Design 4, Atlas, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/4/">4. Atlas</a></h2><p>An atlas: the countries by continent, and the check as the legend that colours them in.</p></div></li><li><img src="/designs/5/shot-1366.webp" alt="Design 5, Brief, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/5/">5. Brief</a></h2><p>Everything on one plain page, for reading fast or printing.</p></div></li></ul></main>
+<footer>
+<nav aria-label="About this site"><a href="/start/">Start here</a> <a href="/agents/">Use with your AI</a> <a href="/admin/">How this site was made</a> <a href="/policy/">How this site is governed</a></nav>
+<p>A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/Site__Tool__DNS">github.com/SovereignWebsite/Site__Tool__DNS</a>.</p>
+</footer>
+</div></body>
+</html>
